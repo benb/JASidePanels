@@ -458,7 +458,7 @@ static char ja_kvoContext;
             return NO;
         }
         BOOL possible = translate.x != 0 && ((fabsf(translate.y) / fabsf(translate.x)) < 1.0f);
-        if (possible && ((translate.x > 0 && self.leftPanel) || (translate.x < 0 && self.rightPanel))) {
+        if (possible){// && ((translate.x > 0 && self.leftPanel) || (translate.x < 0 && self.rightPanel))) {
             return YES;
         }
     }
@@ -575,6 +575,7 @@ static char ja_kvoContext;
 }
 
 - (void)_centerPanelTapped:(__unused UIGestureRecognizer *)gesture {
+    NSLog(@"CENTER TAPPED");
     [self _showCenterPanel:YES bounce:NO];
 }
 
@@ -654,7 +655,7 @@ static char ja_kvoContext;
             [self.leftPanelContainer addSubview:_leftPanel.view];
         }
         
-        self.leftPanelContainer.hidden = NO;
+        self.leftPanelContainer.hidden = NO;	
     }
 }
 
@@ -746,7 +747,7 @@ static char ja_kvoContext;
         case JASidePanelLeftVisible: {
             frame.origin.x = self.leftVisibleWidth;
             if (self.style == JASidePanelMultipleActive) {
-                frame.size.width = self.view.bounds.size.width - self.leftVisibleWidth;
+                //frame.size.width = self.view.bounds.size.width - self.leftVisibleWidth;
             }
             break;
 		}
@@ -754,7 +755,7 @@ static char ja_kvoContext;
             frame.origin.x = -self.rightVisibleWidth;
             if (self.style == JASidePanelMultipleActive) {
                 frame.origin.x = 0.0f;
-                frame.size.width = self.view.bounds.size.width - self.rightVisibleWidth;
+                //frame.size.width = self.view.bounds.size.width - self.rightVisibleWidth;
             }
             break;
 		}
