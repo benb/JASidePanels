@@ -575,7 +575,7 @@ static char ja_kvoContext;
 }
 
 - (void)_centerPanelTapped:(__unused UIGestureRecognizer *)gesture {
-    NSLog(@"CENTER TAPPED");
+   // NSLog(@"CENTER TAPPED");
     [self _showCenterPanel:YES bounce:NO];
 }
 
